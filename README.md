@@ -9,6 +9,23 @@ Tugas Personal 3 untuk mata kuliah Business Application Development
 
 ## Soal
 
+2. Buatlah tampilan login dengan menggunakan komponen dibawah ini
+
+    a.3 Buah label
+    b.2 Buah Text Field (1 Text Field & 1 Password Field)
+    c.2 Buah Button
+    d.1 Buah Check Box
+Berikut penjelasannya : 
+
+ Text Field :
+- Text Field pertama, kita berinama variabel user (TextField)
+- Text Field kedua, kita berinama variabel pass (PasswordField)
+Button :
+- Button Pertama, kita berinama variabel masuk
+- Button Kedua, kita berinama variabel keluar
+Check Box :
+- 1 Buah Check Box, kita berinama variabel tampilpass
+
 3.Buatlah program dalam Java menggunakan GUI untuk menampilkan tulisan “Programming is fun” dengan contoh tampilan sebagai berikut: 
 
 ![Task 3](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/task_3.png?raw=true)
@@ -19,6 +36,23 @@ Selain itu posisi tulisan dapat digeser ke kiri dengan menekan tombol “<=” d
 
 ## Screenshot Results
 
+### No 2 - Login Form Page
+- Login Form Component
+![Login Form Component](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/result_2_2.png?raw=true)
+
+- Login Form Component with Radio Button display Password
+![Login Form Display Password](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/result_2_1.png?raw=true)
+
+- Login Form with Validation Empty Input
+![Login Form Validation Empty Input](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/result_2_3.png?raw=true)
+
+- Login Form with Validation Empty Input Password
+![Login Form Validation Empty Input Password](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/result_2_5.png?raw=true)
+
+- Login Form with Validation Empty Input Username
+![Login Form Validation Empty Input Username](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/result_2_4.png?raw=true)
+
+### No 3 - Change Color And Position
 - Radio Button Action Change Color
 ![Result rbColor](https://github.com/jamilmuh/TugasKelompok_3_TIM_6/blob/master/assets/result_3_1.png?raw=true)
 
