@@ -1,11 +1,11 @@
-/*
+package Login;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
 /**
  *
- * @author Anatasya
+ * @author Team 6 - Business Application Development
  */
 
 import java.sql.*;
@@ -14,10 +14,9 @@ import net.proteanit.sql.DbUtils;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class Login extends javax.swing.JFrame {
 
-        Connection con = null;
+    Connection con = null;
 	ResultSet rs = null;
 	PreparedStatement pst = null;
 	Statement stat;
@@ -55,12 +54,12 @@ public class Login extends javax.swing.JFrame {
 
         varUser = new javax.swing.JTextField();
         varPass = new javax.swing.JPasswordField();
-        tampilPass = new javax.swing.JCheckBox();
-        btnlogin = new javax.swing.JButton();
-        btncancel = new javax.swing.JButton();
-        username = new javax.swing.JLabel();
-        password = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        cbTampilPass = new javax.swing.JCheckBox();
+        btnMasuk = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
+        lblUser = new javax.swing.JLabel();
+        lblPass = new javax.swing.JLabel();
+        lblMasuk = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,33 +69,33 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        tampilPass.setText("Show Password");
-        tampilPass.addActionListener(new java.awt.event.ActionListener() {
+        cbTampilPass.setText("Show Password");
+        cbTampilPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tampilPassActionPerformed(evt);
+                cbTampilPassActionPerformed(evt);
             }
         });
 
-        btnlogin.setText("Log In");
-        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+        btnMasuk.setText("Log In");
+        btnMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnloginActionPerformed(evt);
+                btnMasukActionPerformed(evt);
             }
         });
 
-        btncancel.setText("Cancel");
-        btncancel.addActionListener(new java.awt.event.ActionListener() {
+        btnKeluar.setText("Cancel");
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncancelActionPerformed(evt);
+                btnKeluarActionPerformed(evt);
             }
         });
 
-        username.setText("Username");
+        lblUser.setText("Username");
 
-        password.setText("Password");
+        lblPass.setText("Password");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("LOG IN");
+        lblMasuk.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblMasuk.setText("LOG IN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,25 +103,25 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tampilPass)
+                .addComponent(cbTampilPass)
                 .addGap(128, 128, 128))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(168, 168, 168)
-                        .addComponent(jLabel1))
+                        .addComponent(lblMasuk))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btncancel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(username)
-                                    .addComponent(password))
+                                    .addComponent(lblUser)
+                                    .addComponent(lblPass))
                                 .addGap(42, 42, 42)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(varPass, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,21 +132,21 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jLabel1)
+                .addComponent(lblMasuk)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(varUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(username))
+                    .addComponent(lblUser))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(varPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(password))
+                    .addComponent(lblPass))
                 .addGap(18, 18, 18)
-                .addComponent(tampilPass)
+                .addComponent(cbTampilPass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnlogin)
-                    .addComponent(btncancel))
+                    .addComponent(btnMasuk)
+                    .addComponent(btnKeluar))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -158,7 +157,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_varUserActionPerformed
 
-    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+    private void btnMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasukActionPerformed
         // TODO add your handling code here:
         try {
             sql = "SELECT * FROM account WHERE username='"+varUser.getText()+"' AND password='"+varPass.getText()+"'";
@@ -168,27 +167,36 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Login Success");
                 }
             }else{
+                if(varUser.getText().isEmpty() && varPass.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+                }else {
+                    if (varUser.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please fill input username");
+                    }
+                    if (varPass.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please fill input password");
+                    }
                 }
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-    }//GEN-LAST:event_btnloginActionPerformed
+    }//GEN-LAST:event_btnMasukActionPerformed
 
-    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_btncancelActionPerformed
+    }//GEN-LAST:event_btnKeluarActionPerformed
 
-    private void tampilPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tampilPassActionPerformed
+    private void cbTampilPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTampilPassActionPerformed
         // TODO add your handling code here:
-        if(tampilPass.isSelected())
+        if(cbTampilPass.isSelected())
         {
             varPass.setEchoChar((char)0);
         }else{
             varPass.setEchoChar('*');
         }
-    }//GEN-LAST:event_tampilPassActionPerformed
+    }//GEN-LAST:event_cbTampilPassActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,12 +234,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btncancel;
-    private javax.swing.JButton btnlogin;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel password;
-    private javax.swing.JCheckBox tampilPass;
-    private javax.swing.JLabel username;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnMasuk;
+    private javax.swing.JLabel lblMasuk;
+    private javax.swing.JLabel lblPass;
+    private javax.swing.JCheckBox cbTampilPass;
+    private javax.swing.JLabel lblUser;
     private javax.swing.JPasswordField varPass;
     private javax.swing.JTextField varUser;
     // End of variables declaration//GEN-END:variables
