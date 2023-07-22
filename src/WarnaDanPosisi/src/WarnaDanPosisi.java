@@ -75,6 +75,7 @@ public class WarnaDanPosisi extends JFrame implements ActionListener {
                 currentPosition -= 10; // Adjust the value as needed
             } else if (currentPosition < 10 && currentPosition > 0) {
                 currentPosition = 0;
+                JOptionPane.showMessageDialog(this, "Text berada di tepi kiri, tidak dapat menggeser");
             }
             textLabel.setLocation(currentPosition, textLabel.getY());
         } else if (e.getSource() == moveRightButton) {
@@ -83,6 +84,7 @@ public class WarnaDanPosisi extends JFrame implements ActionListener {
                 currentPosition += 10; // Adjust the value as needed
             } else if (rightPosition > (getWidth() - 10) && rightPosition < getWidth()) {
                 currentPosition += getWidth() - rightPosition - 3; // Adjust the value as needed
+                JOptionPane.showMessageDialog(this, "Text berada di tepi kanan, tidak dapat menggeser");
             }
             textLabel.setLocation(currentPosition, textLabel.getY());
         }
